@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1 id="h11" style="font-family: 'HarryP', sans-serif">Sign In</h1>
+        <form id="login-form">
+          <h1 style="font-family: 'HarryP', sans-serif">Email Address:</h1>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="@gmail.com"
+          /><br /><br />
+          <br /><br />
+          <h1 style="font-family: 'HarryP', sans-serif">Password:</h1>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+          /><br /><br />
+          <br />
+          <button type="submit" id="register">Register</button><br /><br />
+          <div id="error-message"></div>
+        </form>
+        <a href="./home.html" id="home1" style="color: black"
+          ><button id="home">Back To Home</button></a
+        >
+        <div class="signupbtn">
+          <h3>If you already have an Account!</h3>
+          <a href="./signup.html"><button id="signup">Login</button> </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting
+
+          // Get the password input value
+          const password = document.getElementById("password").value;
+
+          // Define regular expressions for each constraint
+          const lengthRegex = /^.{8,15}$/;
+          const digitRegex = /\d/;
+          const uppercaseRegex = /[A-Z]/;
+          const lowercaseRegex = /[a-z]/;
+          const specialCharRegex = /[!@#$%&*()-+=^]/;
+          const whitespaceRegex = /\s/;
+
+          // Check each constraint
+          let errorMessage = "";
+          if (!lengthRegex.test(password)) {
+            errorMessage = "Password must be between 8 and 15 characters long.";
+          } else if (!digitRegex.test(password)) {
+            errorMessage = "Password must contain at least one digit.";
+          } else if (!uppercaseRegex.test(password)) {
+            errorMessage =
+              "Password must contain at least one uppercase letter.";
+          } else if (!lowercaseRegex.test(password)) {
+            errorMessage =
+              "Password must contain at least one lowercase letter.";
+          } else if (!specialCharRegex.test(password)) {
+            errorMessage =
+              "Password must contain at least one special character: !@#$%&*()-+=^";
+          } else if (whitespaceRegex.test(password)) {
+            errorMessage = "Password cannot contain whitespace.";
+          } else {
+            errorMessage = "Strong Password";
+          }
+
+          // Display the error message
+          const errorMessageElement = document.getElementById("error-message");
+          errorMessageElement.textContent = errorMessage;
+          errorMessageElement.style.color = errorMessage ? "red" : "green";
+        });
+      const button1 = document.getElementById("register"); // Replace 'your-button-id' with the actual ID of your button
+
+      // Add event listener for keydown event on the document
+      document.addEventListener("keydown", function (event) {
+        // Check if the pressed key is the "Enter" key
+        if (event.key === "Enter") {
+          // Prevent the default action of the "Enter" key (submitting forms)
+          event.preventDefault();
+
+          // Trigger the button click event
+          button1.click();
+        }
+      });
+    </script>
+  </body>
+</html>

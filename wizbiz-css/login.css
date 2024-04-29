@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'HarryP';
+  src: url(/fonts/HARRYP__.TTF) format('truetype');
+}
+body {
+    margin: 0;
+    font-family: "", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, black, orange, orange, white, black);
+    margin: 0;
+  }
+  
+  .form-container {
+    width: 25%;
+    text-align: center;
+    background-color: white;
+    padding: 2rem; /* Adjusted padding */
+    border-radius: 2rem;
+    box-shadow: 0 0 20px black;
+    height: 40rem; 
+  }
+  
+  #h11 {
+    margin: 0 0 20% 0;
+    text-decoration: underline;
+  }
+  
+  label {
+    font-size: 1.5rem;
+  }
+  
+  #login-form {
+    text-align: center;
+  }
+  
+  #email,
+  #password {
+    width: 100%;
+    padding: 5px 8px 5px 8px;
+    box-shadow: 0 0 5px black;
+    border: 0;
+    border-radius: 1rem;
+  }
+  
+  #register,
+  #error-message { /* Adjusted to style error message */
+    margin-top: 10px; /* Added margin between button and error message */
+  }
+  
+  #register,#home {
+    cursor: pointer;
+    padding: 10px 15px 10px 15px;
+    margin-left: 0;
+    border: 0;
+    box-shadow: 0 0 5px black;
+    background-color: orange;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  #register {
+    background-color: black;
+    color: white;
+    width: 100%;
+  }
+  
+  #error-message {
+    color: red; /* Default color for error message */
+    font-size: 1rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #signup{
+    cursor: pointer;
+    padding: 10px 15px 10px 15px;
+    margin-left: 0;
+    border: 0;
+    box-shadow: 0 0 5px black;
+    background-color: black;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .signupbtn{
+    margin-top: 8%;
+  }
+  
